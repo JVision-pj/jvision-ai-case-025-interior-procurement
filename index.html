@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>設計選品採購板｜Jvision AI Interactive Demo</title>
   <meta name="description" content="管理選品板、採購、到貨、安裝與客戶確認。" />
-  <link rel="stylesheet" href="./styles.css?v=layout-command-center-20260720-1025" />
+  <link rel="stylesheet" href="./styles.css?v=layout-command-center-20260720-stats-contrast-1025" />
 </head>
 <body class="layout-command-center" data-layout="command-center">
   <main class="shell">
@@ -33,6 +33,9 @@
           <article><small>待處理</small><strong id="openCount">--</strong></article>
           <article><small>高風險</small><strong id="riskCount">--</strong></article>
           <article><small>完成率</small><strong id="doneRate">--</strong></article>
+          <article><small>總案件</small><strong id="totalCount">--</strong></article>
+          <article><small>平均 AI 分數</small><strong id="avgScore">--</strong></article>
+          <article><small>急件</small><strong id="urgentCount">--</strong></article>
         </div>
         <div class="insight">
           <span>AI 建議</span>
@@ -43,6 +46,27 @@
 
     <section class="modules" id="modules" aria-label="功能架構">
       <article><span>01</span><h2>AI 摘要</h2><p>自動整理今日異常、待辦、風險與下一步建議。</p></article><article><span>02</span><h2>風險排序</h2><p>依期限、影響度與資料完整度排序最該先處理的項目。</p></article><article><span>03</span><h2>任務派發</h2><p>把 AI 建議轉成負責人、期限與可追蹤狀態。</p></article><article><span>04</span><h2>營運洞察</h2><p>將每日操作累積成趨勢、瓶頸與改善清單。</p></article>
+    </section>
+
+    <section class="panel analytics-panel" aria-label="AI 營運統計">
+      <div class="panel-title">
+        <span>AI 營運統計</span>
+        <b>Data Pulse</b>
+      </div>
+      <div class="analytics-grid">
+        <article class="analytics-card">
+          <span>風險分布</span>
+          <div class="risk-bars" id="riskBars"></div>
+        </article>
+        <article class="analytics-card">
+          <span>AI 成效估算</span>
+          <div class="impact-grid">
+            <article><small>預估節省工時</small><strong id="savedHours">--</strong></article>
+            <article><small>自動化覆蓋率</small><strong id="automationRate">--</strong></article>
+            <article><small>改善任務</small><strong id="improvementCount">--</strong></article>
+          </div>
+        </article>
+      </div>
     </section>
 
     <section class="workspace" id="workspace">
@@ -87,6 +111,6 @@
   <script>
     window.DEMO_CONFIG = {"id":1025,"caseNo":"025","name":"設計選品採購板","category":"營建與工程服務","description":"管理選品板、採購、到貨、安裝與客戶確認。","repoName":"jvision-ai-case-025-interior-procurement","profile":{"object":"工程任務","owner":"工地主任","stages":["待派工","施工中","待驗收","已請款"],"risks":["進度落後","材料未到","安衛缺失","追加變更"],"fields":["工區","期限","風險","承辦"]},"records":[{"id":"1025-1","title":"工程任務 1","target":"設計選品採購板 · 工區 1","owner":"Aken","due":"D+12","risk":"進度落後","stage":"待派工","score":86,"priority":"high","done":false},{"id":"1025-2","title":"工程任務 2","target":"設計選品採購板 · 工區 2","owner":"Mia","due":"D+4","risk":"材料未到","stage":"施工中","score":81,"priority":"high","done":false},{"id":"1025-3","title":"工程任務 3","target":"設計選品採購板 · 工區 3","owner":"Leo","due":"D+3","risk":"安衛缺失","stage":"待驗收","score":53,"priority":"low","done":false},{"id":"1025-4","title":"工程任務 4","target":"設計選品採購板 · 工區 4","owner":"Yuna","due":"D+14","risk":"追加變更","stage":"已請款","score":51,"priority":"low","done":true},{"id":"1025-5","title":"工程任務 5","target":"設計選品採購板 · 工區 5","owner":"Kevin","due":"D+1","risk":"進度落後","stage":"待派工","score":85,"priority":"high","done":false},{"id":"1025-6","title":"工程任務 6","target":"設計選品採購板 · 工區 6","owner":"工地主任","due":"D+4","risk":"材料未到","stage":"施工中","score":68,"priority":"medium","done":false},{"id":"1025-7","title":"工程任務 7","target":"設計選品採購板 · 工區 7","owner":"Aken","due":"D+6","risk":"安衛缺失","stage":"待驗收","score":56,"priority":"low","done":false},{"id":"1025-8","title":"工程任務 8","target":"設計選品採購板 · 工區 8","owner":"Mia","due":"D+1","risk":"追加變更","stage":"已請款","score":84,"priority":"high","done":true}],"modules":[{"title":"AI 摘要","text":"自動整理今日異常、待辦、風險與下一步建議。"},{"title":"風險排序","text":"依期限、影響度與資料完整度排序最該先處理的項目。"},{"title":"任務派發","text":"把 AI 建議轉成負責人、期限與可追蹤狀態。"},{"title":"營運洞察","text":"將每日操作累積成趨勢、瓶頸與改善清單。"}]};
   </script>
-  <script src="./app.js?v=interactive-20260720"></script>
+  <script src="./app.js?v=stats-20260720"></script>
 </body>
 </html>
